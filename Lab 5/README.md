@@ -98,6 +98,10 @@ pi@ixe00:~$ cd ~/openCV-examples/object-detection
 pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 ```
 
+
+https://user-images.githubusercontent.com/42874337/139733420-ed0c6ed3-8a64-4d05-a4e8-fba5f2e417ac.mp4
+
+
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
 #### MediaPipe
