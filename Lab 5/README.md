@@ -164,8 +164,9 @@ Try the two main features of this script: 1) pinching for percentage control, an
 
 
 
+https://user-images.githubusercontent.com/42874337/139738761-2dae57e8-7501-4085-8b4b-93bf0cab7777.mp4
 
-https://user-images.githubusercontent.com/42874337/139738383-9da78978-98e8-4f06-8464-39c39626e0d3.mp4
+
 
 
 #### Teachable Machines
