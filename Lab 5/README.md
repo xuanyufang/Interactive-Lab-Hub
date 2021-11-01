@@ -99,12 +99,23 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 ```
 
 
-https://user-images.githubusercontent.com/42874337/139733701-a44e1008-e9ff-4aae-af5d-a7e46f6f4d9e.mp4
+
+
+https://user-images.githubusercontent.com/42874337/139736612-4c7c5b9e-86c5-4446-a08b-1d7e880633e8.mp4
 
 
 
-https://user-images.githubusercontent.com/42874337/139733708-2c82e6d2-136e-4838-b5c7-8a66aecfa6ee.mp4
+https://user-images.githubusercontent.com/42874337/139736619-e3aa47b8-72d0-4348-b6fb-31b5b2f0332d.mp4
 
+
+
+
+https://user-images.githubusercontent.com/42874337/139736625-f7acb244-3d1c-4682-ad84-89b718622e84.mp4
+
+
+
+
+https://user-images.githubusercontent.com/42874337/139736633-1bad1e56-8ecf-461b-b775-3129f07acfb9.mp4
 
 
 
