@@ -99,6 +99,15 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 ```
 
 
+https://user-images.githubusercontent.com/42874337/139733701-a44e1008-e9ff-4aae-af5d-a7e46f6f4d9e.mp4
+
+
+
+https://user-images.githubusercontent.com/42874337/139733708-2c82e6d2-136e-4838-b5c7-8a66aecfa6ee.mp4
+
+
+
+
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
