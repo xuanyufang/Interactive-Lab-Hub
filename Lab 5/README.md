@@ -162,6 +162,12 @@ Try the two main features of this script: 1) pinching for percentage control, an
 
 
 
+
+
+
+https://user-images.githubusercontent.com/42874337/139738383-9da78978-98e8-4f06-8464-39c39626e0d3.mp4
+
+
 #### Teachable Machines
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple. However, its simplicity is very useful for experimenting with the capabilities of this technology.
 
