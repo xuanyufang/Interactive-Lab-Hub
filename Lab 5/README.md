@@ -201,7 +201,9 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 
-![image](https://user-images.githubusercontent.com/42874337/139779233-defe35e6-ccf4-4eca-a05f-f4d867c97f1a.png)
+
+https://user-images.githubusercontent.com/42874337/139780543-70c49a21-06ed-4c88-9450-a31383d4825b.mp4
+
 
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
