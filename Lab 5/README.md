@@ -232,7 +232,11 @@ Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
-For this project we are planning to prototype an origami instruction device that can 
+For this project we are planning to prototype an origami instruction device that can give out auditory instructions to users and recognize the origami process through a camera system as we have tested with teachable machine. 
+
+This is a device that solely utilize auditory interactions on a spatial task, which can be expand to many fields. This device can be used to explore the idea of teaching people with visual disabilities to learn origami that instructed by machine. 
+
+We have also tested with the hand gesture recognization that we altered the code to recognize a "thumbs up" gesture that representing completion as follows:
 
 https://user-images.githubusercontent.com/42874337/139782983-a15d7282-03a8-49a0-a5e1-d46c100f58eb.mp4
 
