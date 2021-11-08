@@ -17,32 +17,33 @@ import threading
 ### Work of choice: paper butterfly
 STEP_NUM = 11 # total num of instructions
 STEP_IDX = 0 # current step
-STEP_END = False # if user indicated current step is done
+# STEP_END = False # if user indicated current step is done
 STEP_FLAGS = [False] * STEP_NUM # general progress: True = over; False = not over yet;
 STEP_USR_DONE_FLAGS = [False] * STEP_NUM
 LABELS = ["step1", "step2", "step3", "step4", "step5", "step6", "step7", "step8", "step9", "step10", "step11"]
 INSTRUCTIONS = ["Step 1 : Place the paper diagonally with one corner pointing at you. We will be refering to the four corners as the left, right, lower and upper corner.",
                 "Step 2 : Take the lower corner, fold it up, make it meet the upper corner.",
                 "Step 3 : Take the right corner, fold it up, make it meet the upper corner.",
-                "Step 4 : Flip the paper",
-                "Step 5 : Take the corner now at your right, fold it up, make it meet the upper corner."
-                "Steo 6 : Hold the paper up vertically, so that the side with a open pocket is facing up."
-                "Step 7 : Place a finger into the opening pocket, and press on the side. Flatten the paper. Now you should have a triangle.",
-                "Step 8 : Place the triangle with its top corner pointing away from you. Take its bottom edge, fold it up horizontally to a bit lower than the top corner, leave a little tip of the top corner showing from the top.",
-                "Step 9 : Touch the two bottom corners that you just folded up, and feel that there are two layers on each side. Fold the top layers down as far as they can easily go, on both sides. Now, you have a butterfly shape.",
-                "Step 10: Let's give the butterfly some volume. Fold the piece vertically from left to right, make the two sides meet each other.",
-                "Step 11: Hold the piece in one hand, pinching on the back of the folding line from the previous step. Spread the wings with your other hand and press them down. Now, you have a butterfly."]
+                "Step 4 : Flip the piece horitontally. Repeat. Take the corner now at your right, fold it up, make it meet the upper corner.",
+                # "Step 5 : Take the corner now at your right, fold it up, make it meet the upper corner."
+                "Steo 5 : Hold the paper up vertically, so that the side with a open pocket is facing up."
+                "Step 6 : Place a finger into the opening pocket, and press on the side. Flatten the paper. Now you should have a triangle.",
+                "Step 7 : Place the triangle with its top corner pointing away from you. Take its bottom edge, fold it up horizontally to a bit lower than the top corner, leave a little tip of the top corner showing from the top.",
+                "Step 8 : Touch the two bottom corners that you just folded up, and feel that there are two layers on each side. Fold the top layers down as far as they can easily go, on both sides. Now, you have a butterfly shape.",
+                "Step 9: Let's give the butterfly some volume. Fold the piece vertically from left to right, make the two sides meet each other.",
+                "Step 10: Hold the piece in one hand, pinching on the back of the folding line from the previous step. Spread the wings with your other hand and press them down. Now, you have a butterfly."]
 
 
 ######
 ### Audio Interations
 # Model directory in current directory
-if not os.path.exists("model"):
+AUD_MODEL_DIR = "aud_model"
+if not os.path.exists(AUD_MODEL_DIR):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
     exit (1)
 
 USER_INPUT_FILE = 'user_audio_input.wav'
-aud_model = Model("model")
+aud_model = Model(AUD_MODEL_DIR)
 
 # Speak
 def speak(instruction):
@@ -138,15 +139,15 @@ else:
       print("Unable to access webcam.")
 
 
-
 ######
 ### Origami Step Recognition
 
 # Load the model
-tm_model = tensorflow.keras.models.load_model('keras_model.h5')
+TM_MODEL_PATH = 'tm_model/om_keras_model.h5'
+tm_model = tensorflow.keras.models.load_model(TM_MODEL_PATH)
 # Load Labels:
 labels = []
-f = open("labels.txt", "r")
+f = open("tm_model/labels.txt", "r")
 for line in f.readlines():
     if(len(line)<1):
         continue
