@@ -288,5 +288,6 @@ Following exploration and reflection from Part 1, finish building your interacti
 https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-8977-bff88106447c.mp4
 
 
+![image](https://user-images.githubusercontent.com/42874337/140668380-bfd8174d-fc9a-4731-baa8-433ec396e9a6.png)
 
 
