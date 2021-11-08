@@ -36,15 +36,13 @@ INSTRUCTIONS = ["Step 1 : Place the paper diagonally with one corner pointing at
 
 ######
 ### Audio Interations
-
-USER_INPUT_FILE = 'user_audio_input.wav'
-
-if not os.path.exists("../model"):
+# Model directory in current directory
+if not os.path.exists("model"):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
     exit (1)
 
-# USER_INPUT_FILE = "user_input.wav"
-aud_model = Model("../model")
+USER_INPUT_FILE = 'user_audio_input.wav'
+aud_model = Model("model")
 
 # Speak
 def speak(instruction):
