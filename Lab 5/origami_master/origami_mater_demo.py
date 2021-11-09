@@ -136,11 +136,13 @@ else:
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
 
-TM_MODEL_DIR = './tm_model/'
-tm_model = tensorflow.keras.models.load_model(TM_MODEL_DIR + 'om_keras_model.h5')
+# TM_MODEL_DIR = './tm_model/'
+# tm_model = tensorflow.keras.models.load_model(TM_MODEL_DIR + 'om_keras_model.h5')
+tm_model = tensorflow.keras.models.load_model('om_keras_model.h5')
 # Load Labels:
 labels = []
-f = open(TM_MODEL_DIR + 'labels.txt', "r")
+# f = open(TM_MODEL_DIR + 'labels.txt', "r")
+f = open('labels.txt', "r")
 for line in f.readlines():
     if(len(line)<1):
         continue
