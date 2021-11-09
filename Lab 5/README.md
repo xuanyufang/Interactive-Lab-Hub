@@ -120,12 +120,22 @@ One reason is that we did not train the model enough at each different angle, an
 The light could also causes problem, when we train the model in one specific luminant setting, and test in another, it causes lower accuracy. Also the color of the desktop itself influence the accuracy as well in our design.
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
-1. Are they aware of the uncertainties in the system?
 
+**1. Are they aware of the uncertainties in the system?**
 
-3. How bad would they be impacted by a miss classification?
-4. How could change your interactive system to address this?
-5. Are there optimizations you can try to do on your sense-making algorithm.
+Our expected users will be less aware of the uncertainties in the system in our design. This is due to the fact that we are expecting our users to complete the task without any time of visual aids, even no need to look at the origami themselves.
+
+**2. How bad would they be impacted by a miss classification?**
+
+ Due to our error handler system, we expect our users won't be impacted too back due to a miss classification, not only will the device detect current origami progress multiple times to ensure accuracy, but also at the worst case, our user will be asked to redo the process by disassemble it to last step, which is not a huge loss.
+
+**3. How could change your interactive system to address this?**
+
+Other than our error handler system, we have also think of a way for our user to actively ask the device to reexamine the current origami progress if they think the device makes a mistake. 
+
+**4. Are there optimizations you can try to do on your sense-making algorithm.**
+
+Yes, one thing we are planning on doing is to include more samples with different desktop surface, luminant enviromental factors, and angles of the origami steps, so that the whole system can be more accurate in terms of focusing on the origami itself, instead of being influenced by the environment.
 
 ### Part D
 ### Characterize your own Observant system
@@ -146,17 +156,23 @@ During the lecture, we mentioned questions to help characterize a material:
 
 #### Feedback
 
-Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
+From the feedback we received from our classmates and peers, we have concluded a few common opinion:
 
-**\*\*\*Include a short video demonstrating the finished result.\*\*\***
+1. If the users are expected to be blindfolded (or with visual impairment), how to let them know what's the visual field of the camera so that they will keep their working space intact? (We have included a new physical prototype in 3D printing that would be able to be placed under a tray that indicate the designed working space.)
 
+2. What if my hand is also in the visual field, will that influence the accuracy? (We have also included hand in our training sample, as well as instruct our users to put their hand afar when the device examine the progress of the origami, which would be able to address this issue.)
+
+**3D printing model of our new prototype:**
 
 ![image](https://user-images.githubusercontent.com/42874337/140666412-97c1d666-4e35-4b64-b6ff-dad966aca5b9.png)
 ![image](https://user-images.githubusercontent.com/42874337/140666436-b81ecc32-aef7-41d4-b366-accb504f7a58.png)
 
 https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-8977-bff88106447c.mp4
 
+**Since the device is too big to print, we divided it into two parts that can be assemblied afterwards:**
 
 ![image](https://user-images.githubusercontent.com/42874337/140668380-bfd8174d-fc9a-4731-baa8-433ec396e9a6.png)
 
 ![image](https://user-images.githubusercontent.com/42874337/140668512-30e1df49-ef41-4665-971d-5866dd6c01b6.png)
+
+**Since the 3D printer is lack of material this whole week in MakerLAB, we cannot actually print it out before submission. Thus we utilized our initial prototype to finish this lab at this moment. However, we'd like to include the new model once it's been printed.**
