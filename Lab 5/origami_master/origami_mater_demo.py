@@ -159,6 +159,10 @@ user_aud_thread.start()
 ### Main loop
 
 while(True):
+    # Take in visual data
+    if webCam:
+        ret, img = cap.read()
+    
     # Give instructions for current step if haven't been done yet
     if not STEP_FLAGS[STEP_IDX]:
         give_instructions()
@@ -167,10 +171,6 @@ while(True):
 
     # If user indicated step is done
     if STEP_FLAGS[STEP_IDX] and STEP_USR_DONE_FLAGS[STEP_IDX]:
-
-        # Take in visual data
-        if webCam:
-            ret, img = cap.read()
 
         rows, cols, channels = img.shape
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
