@@ -24,20 +24,25 @@ This lab will help you think through the design of observant systems, particular
 
 https://user-images.githubusercontent.com/42874337/139736612-4c7c5b9e-86c5-4446-a08b-1d7e880633e8.mp4
 
-For Contour detection, one of the design we 
+For Contour detection, one of the designs we thought of is a 2D real time VR anime converter. By utilizing the Contour Detection combining with graphic algorithm, we could build a VR software utilize the contour detection to detect edges within visual fields, and process it through a animation algorithm that can make the world looks like a 2D anime in VR headset, but with real world settings and syncronized processing.
 
 #### Face Detection
 
 https://user-images.githubusercontent.com/42874337/139736619-e3aa47b8-72d0-4348-b6fb-31b5b2f0332d.mp4
 
+For face detection, one of the designs that we can think of is a event participant counter that utilize face detection at entrance. It collects the faces that passes through the device and send out information to the event organizer.
+
 #### Optical Flow Detection
 
 https://user-images.githubusercontent.com/42874337/139736625-f7acb244-3d1c-4682-ad84-89b718622e84.mp4
+
+For the optical flow detection, one of the designs we could think of is a virtual note / pen, that allows users to use their hands to annotate a pdf on the screen of their laptop or computer by using their hand to draw circles, or write down things in the air. 
 
 #### Object Detection
 
 https://user-images.githubusercontent.com/42874337/139736633-1bad1e56-8ecf-461b-b775-3129f07acfb9.mp4
 
+For object detection, one thing we could think of is a desktop ognizer. The camera captures how many objects and the size of the objects on the desktop and use an algorithm to optimize the best layout of the desktop for saving spaces. 
 
 
 #### MediaPipe
@@ -46,13 +51,9 @@ https://user-images.githubusercontent.com/42874337/139736633-1bad1e56-8ecf-461b-
 
 (You might also consider how this notion of percentage control with hand tracking might be used in some of the physical UI you may have experimented with in the last lab, for instance in controlling a servo or rotary encoder.)
 
-
-
-
-
 https://user-images.githubusercontent.com/42874337/139738761-2dae57e8-7501-4085-8b4b-93bf0cab7777.mp4
 
-
+On hand tracking, one design we could think of is to use hand gestures as instructions to tune music. index finger up indicate tuning up, while index finger down indicates tuning down. If combined with body pose tracking, we can design a more complicated orchestra command game/system that allows people to virtually adjust volume and tune of different part of the orchestra just like a commander.
 
 
 #### Teachable Machines
@@ -62,7 +63,7 @@ https://user-images.githubusercontent.com/42874337/139738761-2dae57e8-7501-4085-
 https://user-images.githubusercontent.com/42874337/139780543-70c49a21-06ed-4c88-9450-a31383d4825b.mp4
 
 
-We trained a model with Teachable Machines detecting different actions we can apply to a piece of paper. 
+We trained a model with Teachable Machines detecting different actions we can apply to a piece of paper. This is an initial attempt to our project in designing a device that teaches origami for people with visual impairment. The model can recognize three different basic folds of origami from any angle. It categorize the current image to a specific category based on likelihood calcuated using the model. It is different from the OpenCV since it's not processing the data consecutively, but independently as single image, which makes it hard to track things or record traces. It also does not based on hard coded recognization that would be more time consuming than Mediapipe. However, it does offers a more accurate categorization ability and recognization ability in a well-controlled setting. 
 
 
 ### Part B
@@ -74,30 +75,57 @@ Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
-For this project we are planning to prototype an origami instruction device that can give out auditory instructions to users and recognize the origami process through a camera system as we have tested with teachable machine. 
+For this project we are planning to prototype an origami instruction device that can give out auditory instructions to users and recognize the origami process through a camera system as we have tested with teachable machine. This is a device that solely utilize auditory interactions on a spatial task, which can be expand to many fields. This device can be used to explore the idea of teaching people with visual disabilities to learn origami that instructed by machine. This project includes audio interaction, computer vision observation system, error handler system, and physical prototyping using 3D printer.
 
-This is a device that solely utilize auditory interactions on a spatial task, which can be expand to many fields. This device can be used to explore the idea of teaching people with visual disabilities to learn origami that instructed by machine. 
-
-We have also tested with the hand gesture recognization that we altered the code to recognize a "thumbs up" gesture that representing completion as follows:
+We have also tested with the hand gesture recognization that we altered the code to recognize a **"thumbs up"** gesture that representing completion as follows:
 
 https://user-images.githubusercontent.com/42874337/139782983-a15d7282-03a8-49a0-a5e1-d46c100f58eb.mp4
 
+The hand gesture utilizes MediaPipe, and we anticipate to use it as a milestone detection, which allows users to show the device that they have completed the current phase and ready for the device to examine and give out next step of the interaction.
 
 ### Part C
 ### Test the interaction prototype
 
-Now flight test your interactive prototype and **note down your observations**:
-For example:
-1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+
+Our device in detail will be a physical desktop space that a camera hangs around 40cm above users' hands which will be able to recognize and see the origami progress from a vertical angle. Users will show the device after each step instructed, and make changes or move on to next step based on the device's feedback. 
+
+Here's an initial prototype we designed using a desk lamp:
+
+![0703ee0a556280b2e063cc3d99d06f2](https://user-images.githubusercontent.com/42874337/140884939-ac3476b8-9d35-4fa5-93ce-47da2a16428d.jpg)
+
+This is actually better than our expectation since the light also contribute to the clearness of the image captured.
+
+#### Underlying mechanism
+
+The following is the video fo a new Teachable Machine that we implemented and trained that would be able to recognize each steps of the origami example we chose (butterfly). It contains a total of 10 steps, we have also included a default background that has nothing on the desktop surface. 
+
+https://user-images.githubusercontent.com/42874337/140884914-3ac09e27-d8a9-47a4-8e4d-7bfc15279bf1.mp4
+
+#### Flight test
+
+**1. When does it what it is supposed to do?**
+
+The device will detect whether the user is completing the instruction properly before the next step, if not, the error handler system will instruct the user to redo the previous step or to continue from the current step. 
+
+**2. When does it fail?**
+
+In our interaction, the device fail sometimes when the location of the origami is placed incorrectly, or far away from the center. Due to the nature of teachable machine, it strongly influenced the accuracy of detection.
+
+**3. When it fails, why does it fail?**
+
+One reason is that we did not train the model enough at each different angle, another reason is that we use only one color paper on both side, which sometimes will be harder for the model to predict based on the same color origami if the shape stays similar. (Two of our steps shows very similar detection result, and higher chance to mix with each other).
+
+**4. Based on the behavior you have seen, what other scenarios could cause problems?**
+
+The light could also causes problem, when we train the model in one specific luminant setting, and test in another, it causes lower accuracy. Also the color of the desktop itself influence the accuracy as well in our design.
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+
+
+3. How bad would they be impacted by a miss classification?
+4. How could change your interactive system to address this?
+5. Are there optimizations you can try to do on your sense-making algorithm.
 
 ### Part D
 ### Characterize your own Observant system
@@ -116,6 +144,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 ### Part 2.
 
+#### Feedback
+
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
@@ -130,4 +160,3 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 ![image](https://user-images.githubusercontent.com/42874337/140668380-bfd8174d-fc9a-4731-baa8-433ec396e9a6.png)
 
 ![image](https://user-images.githubusercontent.com/42874337/140668512-30e1df49-ef41-4665-971d-5866dd6c01b6.png)
-
