@@ -9,6 +9,8 @@ import sys
 import subprocess
 import wave
 from vosk import Model, KaldiRecognizer
+import os
+import json
 
 import threading
 
@@ -106,9 +108,6 @@ class AudioInteractionThread(threading.Thread):
                 speak("Okay. Let me know when you are ready.")
 
 
-# Disable scientific notation for clarity
-np.set_printoptions(suppress=True)
-
 img = None
 webCam = False
 if(len(sys.argv)>1 and not sys.argv[-1]== "noWindow"):
@@ -134,6 +133,9 @@ else:
 ### Origami Step Recognition
 
 # Load the model
+# Disable scientific notation for clarity
+np.set_printoptions(suppress=True)
+
 TM_MODEL_DIR = './tm_model/'
 tm_model = tensorflow.keras.models.load_model(TM_MODEL_DIR + 'om_keras_model.h5')
 # Load Labels:
