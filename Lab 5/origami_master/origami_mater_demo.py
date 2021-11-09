@@ -159,9 +159,16 @@ user_aud_thread.start()
 ### Main loop
 
 while(True):
-    # Take in visual data
+    ### Take in visual data
     if webCam:
         ret, img = cap.read()
+    
+    rows, cols, channels = img.shape
+    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+
+    size = (224, 224)
+    img =  cv2.resize(img, size, interpolation = cv2.INTER_AREA)
+    ###
     
     # Give instructions for current step if haven't been done yet
     if not STEP_FLAGS[STEP_IDX]:
@@ -172,11 +179,7 @@ while(True):
     # If user indicated step is done
     if STEP_FLAGS[STEP_IDX] and STEP_USR_DONE_FLAGS[STEP_IDX]:
 
-        rows, cols, channels = img.shape
-        data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
-        size = (224, 224)
-        img =  cv2.resize(img, size, interpolation = cv2.INTER_AREA)
         # turn the image into a numpy array
         image_array = np.asarray(img)
 
