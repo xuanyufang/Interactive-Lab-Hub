@@ -9,6 +9,8 @@ import sys
 import subprocess
 import wave
 from vosk import Model, KaldiRecognizer
+import os
+import json
 
 import threading
 
