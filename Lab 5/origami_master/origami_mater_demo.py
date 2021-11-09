@@ -106,15 +106,6 @@ class AudioInteractionThread(threading.Thread):
                 speak("Okay. Let me know when you are ready.")
 
 
-### Introduction
-intro = "Hi, this is origami master. I will walk you through the steps of making a paper butterfly, step by step. When you are done with step, let me know and I will check if you got it right."
-speak(intro)
-
-lock = threading.Lock()
-user_aud_thread = AudioInteractionThread('user_aud', lock)
-user_aud_thread.start()
-
-
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
 
@@ -143,15 +134,24 @@ else:
 ### Origami Step Recognition
 
 # Load the model
-TM_MODEL_PATH = 'tm_model/om_keras_model.h5'
-tm_model = tensorflow.keras.models.load_model(TM_MODEL_PATH)
+TM_MODEL_DIR = './tm_model/'
+tm_model = tensorflow.keras.models.load_model(TM_MODEL_DIR + 'om_keras_model.h5')
 # Load Labels:
 labels = []
-f = open("tm_model/labels.txt", "r")
+f = open(TM_MODEL_DIR + 'labels.txt', "r")
 for line in f.readlines():
     if(len(line)<1):
         continue
     labels.append(line.split(' ')[1].strip())
+
+
+### Introduction & Start audio thread
+intro = "Hi, this is origami master. I will walk you through the steps of making a paper butterfly, step by step. When you are done with step, let me know and I will check if you got it right."
+speak(intro)
+
+lock = threading.Lock()
+user_aud_thread = AudioInteractionThread('user_aud', lock)
+user_aud_thread.start()
 
 ######
 ### Main loop
@@ -191,7 +191,6 @@ while(True):
             speak(INSTRUCTIONS[STEP_IDX][:7] + " is correct. Great job!")
             # Move on to the next step
             STEP_IDX += 1
-
 
 
     if webCam:
