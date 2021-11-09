@@ -103,6 +103,11 @@ https://user-images.githubusercontent.com/42874337/140884914-3ac09e27-d8a9-47a4-
 
 #### Flight test
 
+**Flight test video:**
+
+https://user-images.githubusercontent.com/42874337/141015380-17709dd3-ce48-4022-979d-4dc0b1a7b1d5.mp4
+
+
 **1. When does it what it is supposed to do?**
 
 The device will detect whether the user is completing the instruction properly before the next step, if not, the error handler system will instruct the user to redo the previous step or to continue from the current step. 
@@ -176,3 +181,13 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 ![image](https://user-images.githubusercontent.com/42874337/140668512-30e1df49-ef41-4665-971d-5866dd6c01b6.png)
 
 **Since the 3D printer is lack of material this whole week in MakerLAB, we cannot actually print it out before submission. Thus we utilized our initial prototype to finish this lab at this moment. However, we'd like to include the new model once it's been printed.**
+
+Taking a really long time to print:
+
+https://user-images.githubusercontent.com/42874337/141015239-f3ed763b-f578-4b90-962f-9acbb8f7f21a.mp4
+
+### User test 
+
+We recruited a participant who did not exposed to the whole process and outside of the idd class, and experiment in a real environment:
+
+
