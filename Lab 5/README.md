@@ -152,6 +152,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 In our case, the X refers to the **Origami Master** observant system. It gives instructions at each step, observes images of the user's origami piece after they performed each step (and gives the system a verbal cue) to check if they got the step right.
 
+
+
 * **What can you use X for?**
 
 * The core idea of this system is to do the job that's usually done with user's eyes and thinking process, so that visually impaired users can also try to learn origami.
@@ -243,16 +245,19 @@ https://user-images.githubusercontent.com/37056925/141145055-783dab5c-6f6e-4c33-
 Though the participant generally understood the instructions and was able to follow along, but we did found a few problems in our observation.
 
 1. When it comes to using Computer Vision, there are always **more details** that are required in a origami step that we can think of beforehand. 
+
 * In order for a image of a step's ending product to be recognized as correct, the orientation in which the piece is placed needs to be considered and taken into account while training the model. **Some of our steps is lacking multi-orientation variance, and this is something to consider in future steps towards a final project (should it adopt a similar observant system)**.
 
 2. **The robustness of the "alternative" interaction medium is essential for an accessibility centric system.**
+
 * In our case, we wanted to substitue user’s visual input/outputs in the origami learning process with CV + audio communication; the audio communication is how the observant system communicate with the user, so it would need to be very robust for the system to work smoothly. 
+
 * Unfortunately, the audio input methods for our Raspberry Pi is not working ideally. The microphone often fails to take in audio from the user, thus it commonly took multiple attempts for the user to indicate to the system that they are done with the current step.
+
+* Towards the end of this process, we started questioning the rationality of choosing audio as the method for users to cue the system for step correctness check. There are two ways of information transmission in this design, system to user and user to system. **Audio is necessary for the system delivering message to the user, but is it really a good idea for the other way around? What if we just gave users a button to press?** Afterall, robustness is key as stated before, and audio is not the best choice in this sense.
 
 
 <br>
-
-### Conclusions
 
 The practices in this lab provided us with helpful insights on our thinking process for the final project.
 
