@@ -201,6 +201,11 @@ We asked the participant to **cover her eyes**, to fully imitate what a visually
 
 #### User Test Video
 
+
+https://user-images.githubusercontent.com/37056925/141142591-86b48854-d4db-42be-9c34-13352516a407.mp4
+
+
+
 #### Problems We Found
 
 Though the participant generally understood the instructions and was able to follow along, but we did found a few problems in our observation.
