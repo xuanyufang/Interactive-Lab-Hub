@@ -157,6 +157,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+https://user-images.githubusercontent.com/42874337/141044704-0b051b61-2a2c-4616-9e94-31991041ce7d.mp4
+
 
 
 ### Part 2.
@@ -184,9 +186,8 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 
 **Since the 3D printer is lack of material this whole week in MakerLAB, we cannot actually print it out before submission. Thus we utilized our initial prototype to finish this lab at this moment. However, we'd like to include the new model once it's been printed.**
 
-Taking a really long time to print:
 
-https://user-images.githubusercontent.com/42874337/141015239-f3ed763b-f578-4b90-962f-9acbb8f7f21a.mp4
+![979b6a7e812043975b2755d5ef0e442](https://user-images.githubusercontent.com/42874337/141044100-3f6566c6-39aa-4036-8a48-ca0dd8a422ef.jpg)
 
 ### User test 
 
