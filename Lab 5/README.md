@@ -152,7 +152,7 @@ During the lecture, we mentioned questions to help characterize a material:
 
 In our case, the X refers to the **Origami Master** observant system. It gives instructions at each step, observes images of the user's origami piece after they performed each step (and gives the system a verbal cue) to check if they got the step right.
 
-
+![pbutterfly](https://user-images.githubusercontent.com/37056925/141156073-b17b2a5c-7278-49b2-a78f-21ddf1da4787.jpeg)
 
 * **What can you use X for?**
 
