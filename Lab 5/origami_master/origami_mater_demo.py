@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 import sys
 
+import time
 import subprocess
 import wave
 from vosk import Model, KaldiRecognizer
@@ -26,14 +27,13 @@ LABELS = ["step1", "step2", "step3", "step4", "step5", "step6", "step7", "step8"
 INSTRUCTIONS = ["Step 1 : Place the paper diagonally with one corner pointing at you. We will be refering to the four corners as the left, right, lower and upper corner.",
                 "Step 2 : Take the lower corner, fold it up, make it meet the upper corner.",
                 "Step 3 : Take the right corner, fold it up, make it meet the upper corner.",
-                "Step 4 : Flip the piece horitontally. Repeat. Take the corner now at your right, fold it up, make it meet the upper corner.",
-                # "Step 5 : Take the corner now at your right, fold it up, make it meet the upper corner."
-                "Steo 5 : Hold the paper up vertically, so that the side with a open pocket is facing up."
+                "Step 4 : Flip the piece horizontally. Now repeat the previous step on the corner now at your right. Fold it up, make it meet the upper corner.",
+                "Step 5 : Hold the paper up vertically, so that the side with a open pocket is facing up.",
                 "Step 6 : Place a finger into the opening pocket, and press on the side. Flatten the paper. Now you should have a triangle.",
-                "Step 7 : Place the triangle with its top corner pointing away from you. Take its bottom edge, fold it up horizontally to a bit lower than the top corner, leave a little tip of the top corner showing from the top.",
-                "Step 8 : Touch the two bottom corners that you just folded up, and feel that there are two layers on each side. Fold the top layers down as far as they can easily go, on both sides. Now, you have a butterfly shape.",
-                "Step 9: Let's give the butterfly some volume. Fold the piece vertically from left to right, make the two sides meet each other.",
-                "Step 10: Hold the piece in one hand, pinching on the back of the folding line from the previous step. Spread the wings with your other hand and press them down. Now, you have a butterfly."]
+                "Step 7 : Place the triangle with its top corner pointing away from you. Fold its bottom upwards, leave a tip of the top corner showing from the top.",
+                "Step 8 : Find the two bottom corners that you just folded up. Fold the top layers down as far as they can easily go. Now, you have a butterfly shape.",
+                "Step 9 : Fold the piece vertically from left to right, make the two sides meet each other.",
+                "Step 10: Hold the back of the folding line from the previous step. Spread the wings with your other hand and press them down. Now you have a butterfly."]
 
 
 ######
@@ -49,6 +49,7 @@ aud_model = Model(AUD_MODEL_DIR)
 
 # Speak
 def speak(instruction):
+    print("Speaking...")
     command = """
         say() { 
             local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; 
@@ -56,9 +57,9 @@ def speak(instruction):
     """ + f"say '{instruction}'"
     subprocess.call(command, shell=True)
 
-# Current recording duration: 3s
+# Current recording duration: 2s
 def record_user_input():
-    subprocess.call("arecord -D hw:2,0 -f cd -c1 -r 48000 -d 3 -t wav " + USER_INPUT_FILE, shell=True)
+    subprocess.call("arecord -D hw:2,0 -f cd -c1 -r 48000 -d 2 -t wav " + USER_INPUT_FILE, shell=True)
 
 def recognize(pattern):
     wf = wave.open(USER_INPUT_FILE, "rb")
@@ -81,16 +82,14 @@ def recognize(pattern):
     print("Failed to recognize")
     return ""
 
-def dont_understand():
-    speak("What, what are you saying? I don’t understand.")
-
-
 def give_instructions():
     speak(INSTRUCTIONS[STEP_IDX])
 
+# def dont_understand():
+#     speak("I don’t understand.")
 
 ######
-
+### Thread for taking user's audio input
 class AudioInteractionThread(threading.Thread):
     def __init__(self, name, lock):
         threading.Thread.__init__(self, name=name)
@@ -102,11 +101,14 @@ class AudioInteractionThread(threading.Thread):
         while True: ### Always recording?
             record_user_input()
             result = recognize(self.pattern)
-            if "done" in result or "good" in result or "ok" in result:
+            print(result)
+            if "done" in result or "good" in result or "ok" in result or "okay" in result:
                 STEP_USR_DONE_FLAGS[STEP_IDX] = True
-            else:
-                speak("Okay. Let me know when you are ready.")
+            # else:
+            #     speak("Okay. Let me know when you are ready.")
 
+######
+### Set up webcam
 
 img = None
 webCam = False
@@ -130,7 +132,7 @@ else:
 
 
 ######
-### Origami Step Recognition
+### Origami step recognition - \w tm keras model
 
 # Load the model
 # Disable scientific notation for clarity
@@ -150,8 +152,11 @@ for line in f.readlines():
 
 
 ### Introduction & Start audio thread
-intro = "Hi, this is origami master. I will walk you through the steps of making a paper butterfly, step by step. When you are done with step, let me know and I will check if you got it right."
-speak(intro)
+speak("Hi, this is origami master.")
+speak("I will walk you through the steps of making a paper butterfly, step by step.")
+speak("When you are done with a step, let me know by saying I am good, and I will check if you got it right.")
+
+# time.sleep(2)
 
 lock = threading.Lock()
 user_aud_thread = AudioInteractionThread('user_aud', lock)
@@ -181,7 +186,6 @@ while(True):
     # If user indicated step is done
     if STEP_FLAGS[STEP_IDX] and STEP_USR_DONE_FLAGS[STEP_IDX]:
 
-
         # turn the image into a numpy array
         image_array = np.asarray(img)
 
@@ -192,13 +196,16 @@ while(True):
 
         # run the inference -> get step prediction
         prediction = tm_model.predict(data)
-        print("I think its a:",labels[np.argmax(prediction)])
+        print("I think its :",labels[np.argmax(prediction)])
 
         if labels[np.argmax(prediction)] == LABELS[STEP_IDX]:
             speak(INSTRUCTIONS[STEP_IDX][:7] + " is correct. Great job!")
             # Move on to the next step
             STEP_IDX += 1
 
+    # print("STEP IDX", STEP_IDX)
+    # print("STEP IDX FLAGS", STEP_FLAGS)
+    # print("STEP USR DONE FLAGS", STEP_USR_DONE_FLAGS)
 
     if webCam:
         if sys.argv[-1] == "noWindow":
