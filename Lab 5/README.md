@@ -205,6 +205,9 @@ We asked the participant to **cover her eyes**, to fully imitate what a visually
 https://user-images.githubusercontent.com/37056925/141142591-86b48854-d4db-42be-9c34-13352516a407.mp4
 
 
+https://user-images.githubusercontent.com/37056925/141145055-783dab5c-6f6e-4c33-8757-26e1f0e3c034.mp4
+
+
 
 #### Problems We Found
 
