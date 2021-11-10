@@ -201,11 +201,16 @@ We asked the participant to **cover her eyes**, to fully imitate what a visually
 
 #### User Test Video
 
+#### Problems We Found
+
 Though the participant generally understood the instructions and was able to follow along, but we did found a few problems in our observation.
 
-1. When it comes to using Computer Vision, there are always **more details** that are required in a origami step that we can think of beforehand. In order for a image of a step's ending product to be recognized as correct, the orientation in which the piece is placed needs to be considered and taken into account while training the model. **Some of our steps is lacking multi-orientation variance, and this is something to consider in future steps towards a final project (should it adopt a similar observant system)**.
+1. When it comes to using Computer Vision, there are always **more details** that are required in a origami step that we can think of beforehand. 
+* In order for a image of a step's ending product to be recognized as correct, the orientation in which the piece is placed needs to be considered and taken into account while training the model. **Some of our steps is lacking multi-orientation variance, and this is something to consider in future steps towards a final project (should it adopt a similar observant system)**.
 
-2. 
+2. **The robustness of the "alternative" interaction medium is essential for an accessibility centric system.**
+* In our case, we wanted to substitue user’s visual input/outputs in the origami learning process with CV + audio communication; the audio communication is how the observant system communicate with the user, so it would need to be very robust for the system to work smoothly. 
+* Unfortunately, the audio input methods for our Raspberry Pi is not working ideally. The microphone often fails to take in audio from the user, thus it commonly took multiple attempts for the user to indicate to the system that they are done with the current step.
 
 
 <br>
