@@ -191,6 +191,8 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 
 ### User test 
 
-We recruited a participant who did not exposed to the whole process and outside of the idd class, and experiment in a real environment:
+In order to create a realistic testing environment and collect meaningful feedback, we recruited a participant who is neither in the IDD class or exposed to the whole process.
+
+
 
 
