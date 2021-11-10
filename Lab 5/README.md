@@ -157,7 +157,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
- [Video]
+
+
 ### Part 2.
 
 #### Feedback
