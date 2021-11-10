@@ -152,8 +152,6 @@ During the lecture, we mentioned questions to help characterize a material:
 
 In our case, the X refers to the **Origami Master** observant system. It gives instructions at each step, observes images of the user's origami piece after they performed each step (and gives the system a verbal cue) to check if they got the step right.
 
-![pbutterfly](https://user-images.githubusercontent.com/37056925/141156073-b17b2a5c-7278-49b2-a78f-21ddf1da4787.jpeg)
-
 * **What can you use X for?**
 
 * The core idea of this system is to do the job that's usually done with user's eyes and thinking process, so that visually impaired users can also try to learn origami.
@@ -263,9 +261,6 @@ The practices in this lab provided us with helpful insights on our thinking proc
 
 We've always been interested in accessibility and sense-enhancing topics & designes in general, and want to build something for our finals somewhere down this track.
 
+P.S. Maybe someday we can help anyone learn how to make a paper butterfly for their loved ones.
 
-
-
-
-
-
+![pbutterfly](https://user-images.githubusercontent.com/37056925/141156073-b17b2a5c-7278-49b2-a78f-21ddf1da4787.jpeg)
