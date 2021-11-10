@@ -191,16 +191,34 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 
 ![979b6a7e812043975b2755d5ef0e442](https://user-images.githubusercontent.com/42874337/141044100-3f6566c6-39aa-4036-8a48-ca0dd8a422ef.jpg)
 
-**Developer test from step 6 to step 10:**
-
-
-### User test 
+### User tests 
 
 In order to create a realistic testing environment and collect meaningful feedback, we recruited a participant who is neither in the IDD class or exposed to the whole process.
 
-### Problems
+We asked the participant to **cover her eyes**, to fully imitate what a visually impaired user would feel.
 
-The following is the problems we detected from developer's test and user's test, as well as how we anticipate it could be resolved in future labs:
+> An interesting point the participant raised while we are explaining the process to her is that, actual visually impaired users might have a sharper sense of the environment that us. It could be hard for able-sighted people to adjust to this setting and find this system useful.
+
+#### User Test Video
+
+Though the participant generally understood the instructions and was able to follow along, but we did found a few problems in our observation.
+
+1. When it comes to using Computer Vision, there are always **more details** that are required in a origami step that we can think of beforehand. In order for a image of a step's ending product to be recognized as correct, the orientation in which the piece is placed needs to be considered and taken into account while training the model. **Some of our steps is lacking multi-orientation variance, and this is something to consider in future steps towards a final project (should it adopt a similar observant system)**.
+
+2. 
+
+
+<br>
+
+### Conclusions
+
+The practices in this lab provided us with helpful insights on our thinking process for the final project.
+
+We've always been interested in accessibility and sense-enhancing topics & designes in general, and want to build something for our finals somewhere down this track.
+
+
+
+
 
 
 
