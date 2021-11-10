@@ -157,6 +157,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+**Developer test of the device from step 1 to step 6:**
+
 https://user-images.githubusercontent.com/42874337/141044704-0b051b61-2a2c-4616-9e94-31991041ce7d.mp4
 
 
@@ -189,10 +191,16 @@ https://user-images.githubusercontent.com/42874337/140666580-1146364c-2343-46e5-
 
 ![979b6a7e812043975b2755d5ef0e442](https://user-images.githubusercontent.com/42874337/141044100-3f6566c6-39aa-4036-8a48-ca0dd8a422ef.jpg)
 
+**Developer test from step 6 to step 10:**
+
+
 ### User test 
 
 In order to create a realistic testing environment and collect meaningful feedback, we recruited a participant who is neither in the IDD class or exposed to the whole process.
 
+### Problems
+
+The following is the problems we detected from developer's test and user's test, as well as how we anticipate it could be resolved in future labs:
 
 
 
