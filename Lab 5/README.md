@@ -147,13 +147,40 @@ Yes, one thing we are planning on doing is to include more samples with differen
 
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
-* What can you use X for?
-* What is a good environment for X?
-* What is a bad environment for X?
-* When will X break?
-* When it breaks how will X break?
-* What are other properties/behaviors of X?
-* How does X feel?
+
+#### **Our Case**
+
+In our case, the X refers to the **Origami Master** observant system. It gives instructions at each step, observes images of the user's origami piece after they performed each step (and gives the system a verbal cue) to check if they got the step right.
+
+* **What can you use X for?**
+
+* The core idea of this system is to do the job that's usually done with user's eyes and thinking process, so that visually impaired users can also try to learn origami.
+
+* **What is a good environment for X?**
+
+* An environment that's relatively quiet, and has a flat platform for the user to place X and do their work.
+
+* **What is a bad environment for X?**
+
+* An environment that's too noisy to the point it interrupts the system taking in audio input from the user.
+
+* **When will X break?**
+
+* A) False negative / False positive - When X fails to classify a correct piece or mistakenly sees a wrong piece as correct, due to unconsidered variance while training the model, or similarities between differetn steps;
+B) Audio recognition failure - When X fails to accurately & timely recognize the user's spoken words.
+
+* **When it breaks how will X break?**
+
+* X will give wrong feedback (false negative / false positive); Or when it's a audio failure, it won't react to the user's aduio cues when it should.
+
+* **What are other properties/behaviors of X?**
+
+* The CV classification process of X is triggered by user's audio cues. When the users says "I'm done/good/okay", it feeds what it sees to the CV classification model and performs its judging duties.
+
+* **How does X feel?**
+
+* It feels like a camera hanging over your desk/table/working station like a lamp, watching your hand movements. It also feels like a devices listening to what you say and waiting to react.
+
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
@@ -198,6 +225,8 @@ In order to create a realistic testing environment and collect meaningful feedba
 We asked the participant to **cover her eyes**, to fully imitate what a visually impaired user would feel.
 
 > An interesting point the participant raised while we are explaining the process to her is that, actual visually impaired users might have a sharper sense of the environment that us. It could be hard for able-sighted people to adjust to this setting and find this system useful.
+
+We drawed a few problems from our observation of the testing process.
 
 #### User Test Video
 
