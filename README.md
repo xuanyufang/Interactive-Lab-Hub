@@ -11,7 +11,7 @@ for [Interactive Device Design](https://github.com/FAR-Lab/Developing-and-Design
 
 [Lab 5. Observant Systems](Lab%205/)
 
-Lab 6. Where We Go One, We Go All<!--[](Lab%206/)-->
+[Lab 6. Little Interactions Everywhere](Lab%206/)
 
-Final Project<!--[](Final%20Project/)-->
+[Final Project](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/FinalProject.md)<!--[](Final%20Project/)-->
 
