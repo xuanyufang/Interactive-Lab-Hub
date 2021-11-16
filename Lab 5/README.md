@@ -264,3 +264,16 @@ We've always been interested in accessibility and sense-enhancing topics & desig
 P.S. Maybe someday we can help anyone learn how to make a paper butterfly for their loved ones.
 
 ![pbutterfly](https://user-images.githubusercontent.com/37056925/141156073-b17b2a5c-7278-49b2-a78f-21ddf1da4787.jpeg)
+
+P.S. It has finally printed out (11/15/2021), looks amazing but fragile:
+
+![WeChat Image_20211115192453](https://user-images.githubusercontent.com/42874337/141873600-bffa66d4-ca98-4774-ad2b-4be9e4281b44.jpg)
+
+
+![WeChat Image_20211115192332](https://user-images.githubusercontent.com/42874337/141873634-b3c6a8fe-f57a-4d04-983c-49c6190c3748.jpg)
+
+
+![WeChat Image_20211115192448](https://user-images.githubusercontent.com/42874337/141873645-9c2e2275-113e-425e-b1e4-1e3a54c966d7.jpg)
+
+![WeChat Image_20211115192511](https://user-images.githubusercontent.com/42874337/141873651-c7ba0888-0d8a-4295-897b-174853533971.jpg)
+
