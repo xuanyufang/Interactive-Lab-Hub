@@ -1,35 +1,31 @@
 
 # Project Handover 
 
-## Objective
+## Idea Formation
 
-The goal of this final project is for you to have a fully functioning and well-designed interactive device of your own design.
- 
-## Description
-Your project is to design and build an interactive device to suit a specific application of your choosing, and test the interaction with people. 
-## Deliverables
+### Idea Generation
 
-1. Project plan: Big idea, timeline, parts needed, fall-back plan.
+Our original idea was initially inspired by this clip from a Netflix show *Space Force*. 
 
-2. Functioning project: The finished project should be a device, system, interface, etc. that people can interact with.
+https://user-images.githubusercontent.com/42874337/141866447-08171305-cf33-4ae6-b19a-00f89f40d4b0.mp4
 
-3. Documentation of design process
-4. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
-5. Video of someone using your project
-6. Reflections on process (What have you learned or wish you knew at the start?)
+Our device was inspired by the increasing prevalence of virtual meetings. In the recent years, more and more first encounters between people occurred through a video conference, Zoom meeting, or
 
-7. Group work distribution questionnaire
+### Sketch
 
-## Change of Design
+![HandOver Sketch](https://user-images.githubusercontent.com/37056925/141871861-85184969-8062-4a41-a4cd-aa189144ba8d.jpeg)
 
-It is fine to change your project goals, but please resubmit the project plan for the new design when you do that.
+## Procedure
 
+### Physical Prototyping
 
-## Teams
+### Programming Implementation
 
-You can and are not required to work in teams. Be clear in documentation who contributed what. The total project contributions should reflect the number of people on the project.
+## User Test
 
-## Examples
+## Improvement
 
-[Here is a list of good final projects from previous classes.](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/wiki/Previous-Final-Projects)
-This version of the class is very different, but it may be useful to see these.
+## Presentation & Impact
+
+## Reflection
+
